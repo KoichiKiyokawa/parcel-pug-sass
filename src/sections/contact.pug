@@ -1,0 +1,22 @@
+section#contact
+  form(class="card")
+    label 氏名
+      input(name="name")
+
+    label 電話番号
+      input(type="tel")
+
+    label 生年月日
+      fieldset.date-pick
+        select#select-year
+          option(value="") 年
+          - let thisYear = new Date().getFullYear()
+          - let i = 0
+          while i <= 100
+            - let year = thisYear - i++
+            option(value=year)= year
+        select
+          option(value="") 月
+          - let month = 0
+          while ++month <= 12
+            option(value=month)= month

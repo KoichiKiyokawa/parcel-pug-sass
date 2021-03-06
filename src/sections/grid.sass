@@ -1,0 +1,22 @@
+@import "./_partial"
+
+section#grid
+  display: flex
+
+.grid
+  &__content-wrapper
+    margin-left: auto
+    margin-right: auto
+  &__content
+    &+&
+      margin-top: pxToRem(16)
+    display: flex
+    flex-direction: column
+
+    @include mq(lg)
+      &+&
+        margin-top: pxToRem(32)
+      flex-direction: row
+    
+    p
+      margin-left: pxToRem(12)
